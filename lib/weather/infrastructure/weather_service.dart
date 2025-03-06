@@ -64,11 +64,4 @@ class WeatherService implements IWeatherService {
       );
     }
   }
-
-  @override
-  Future<Result<WeatherModel, WeatherException>>
-      getWeatherForCurrentLocation() async {
-    // For now, return New York weather as we haven't implemented location services
-    return getWeatherForCity(cityName: 'New York');
-  }
 }

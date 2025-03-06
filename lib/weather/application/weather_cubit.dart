@@ -31,25 +31,6 @@ class WeatherCubit extends Cubit<WeatherState> {
     }
   }
 
-  Future<void> getWeatherForCurrentLocation() async {
-    emit(state.copyWith(
-      weatherData: const DataState.loading(),
-      lastSearchedCity: 'Current Location',
-    ));
-
-    final result = await _weatherService.getWeatherForCurrentLocation();
-
-    if (result.isSuccess) {
-      emit(state.copyWith(
-        weatherData: DataState.success(value: result.success),
-      ));
-    } else {
-      emit(state.copyWith(
-        weatherData: DataState.failure(result.failure),
-      ));
-    }
-  }
-
   void toggleTemperatureUnit() {
     state.weatherData.maybeWhen(
       success: (currentWeather, _) {

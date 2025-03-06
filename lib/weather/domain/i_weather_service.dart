@@ -38,13 +38,4 @@ abstract class IWeatherService {
   Future<Result<WeatherModel, WeatherException>> getWeatherForCity({
     required String cityName,
   });
-
-  /// Fetches current weather data for the user's current location
-  ///
-  /// Returns [Result.success] with [WeatherModel] if successful
-  /// Returns [Result.failure] with [WeatherException]:
-  /// - [WeatherErrorType.network] for network or location service issues
-  /// - [WeatherErrorType.server] for server-side errors
-  /// - [WeatherErrorType.unknown] for unexpected errors
-  Future<Result<WeatherModel, WeatherException>> getWeatherForCurrentLocation();
 }
