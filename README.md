@@ -16,12 +16,12 @@ This project is a starting point for building a weather application in Flutter. 
 
 1. Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/vibe_coding_tutorial_weather_app.git
+git clone https://github.com/YOUR_USERNAME/cursor_tutorial_weather_app.git
 ```
 
 2. Navigate to project directory
 ```bash
-cd vibe_coding_tutorial_weather_app
+cd cursor_tutorial_weather_app
 ```
 
 3. Get dependencies
