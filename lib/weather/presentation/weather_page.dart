@@ -55,7 +55,7 @@ class WeatherPageView extends StatelessWidget {
               // City Selection TextField
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.9),
+                  color: Colors.white.withValues(alpha: 0.9),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: TextField(

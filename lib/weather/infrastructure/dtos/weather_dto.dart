@@ -9,10 +9,10 @@ part 'weather_dto.g.dart';
 @freezed
 class WeatherDto with _$WeatherDto {
   const factory WeatherDto({
-    @JsonKey(name: 'name') required String cityName,
-    @JsonKey(name: 'main') required WeatherMainDto main,
-    @JsonKey(name: 'weather') required List<WeatherConditionDto> weather,
-    @JsonKey(name: 'wind') required WindDto wind,
+    required String cityName,
+    required WeatherMainDto main,
+    required List<WeatherConditionDto> weather,
+    required WindDto wind,
   }) = _WeatherDto;
 
   factory WeatherDto.fromJson(Map<String, dynamic> json) =>
@@ -22,8 +22,8 @@ class WeatherDto with _$WeatherDto {
 @freezed
 class WeatherMainDto with _$WeatherMainDto {
   const factory WeatherMainDto({
-    @JsonKey(name: 'temp') required double temperature,
-    @JsonKey(name: 'humidity') required int humidity,
+    required double temperature,
+    required int humidity,
   }) = _WeatherMainDto;
 
   factory WeatherMainDto.fromJson(Map<String, dynamic> json) =>
@@ -33,8 +33,8 @@ class WeatherMainDto with _$WeatherMainDto {
 @freezed
 class WeatherConditionDto with _$WeatherConditionDto {
   const factory WeatherConditionDto({
-    @JsonKey(name: 'main') required String main,
-    @JsonKey(name: 'description') required String description,
+    required String main,
+    required String description,
   }) = _WeatherConditionDto;
 
   factory WeatherConditionDto.fromJson(Map<String, dynamic> json) =>
@@ -44,7 +44,7 @@ class WeatherConditionDto with _$WeatherConditionDto {
 @freezed
 class WindDto with _$WindDto {
   const factory WindDto({
-    @JsonKey(name: 'speed') required double speed,
+    required double speed,
   }) = _WindDto;
 
   factory WindDto.fromJson(Map<String, dynamic> json) =>
