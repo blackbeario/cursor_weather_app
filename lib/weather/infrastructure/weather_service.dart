@@ -11,15 +11,20 @@ import 'dtos/weather_dto.dart';
 
 class WeatherService implements IWeatherService {
   final http.Client _client;
+  final String Function(String) _urlBuilder;
 
-  WeatherService({http.Client? client}) : _client = client ?? http.Client();
+  WeatherService({
+    http.Client? client,
+    String Function(String)? urlBuilder,
+  })  : _client = client ?? http.Client(),
+        _urlBuilder = urlBuilder ?? WeatherApiKeys.getWeatherByCity;
 
   @override
   Future<Result<WeatherModel, WeatherException>> getWeatherForCity({
     required String cityName,
   }) async {
     try {
-      final url = WeatherApiKeys.getWeatherByCity(cityName);
+      final url = _urlBuilder(cityName);
       log('Requesting weather data from: $url');
 
       final response = await _client.get(Uri.parse(url));
